@@ -5,12 +5,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { ContadorComponent } from './components/contador/contador.component';
 import { HeroComponent } from './components/shared/hero/hero.component';
+import { ListadoComponent } from './components/shared/listado/listado.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ContadorComponent,
-    HeroComponent
+    HeroComponent,
+    ListadoComponent
   ],
   imports: [
     BrowserModule
