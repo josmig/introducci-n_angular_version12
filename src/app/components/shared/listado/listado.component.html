@@ -1,8 +1,15 @@
 <h1>Listado de Heroes con NgFor</h1>
+
 <div>
-    <h3 *ngIf="heroeBorrado.length>0">Heroe borrado : {{heroeBorrado}}</h3>
+    <h3 *ngIf="heroeBorrado.length>0; else noBorrado">Heroe borrado : {{heroeBorrado}}</h3>
     
 </div>
+<!-- La referencia local lo identificamos por el signo de numeral #, no es algo que exista en el componente si no en el template -->
+<ng-template #noBorrado> 
+    <h3 *ngIf="!heroeBorrado">No Ha borrado Nada</h3>    
+</ng-template>
+
+
 <button (click)="delete()">
     Borrando
 </button>

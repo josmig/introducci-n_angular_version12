@@ -13,9 +13,7 @@ export class ListadoComponent {
     /* console.log('Borrando...');     */
     /* this.heroes.splice(i,1); */
     this.heroeBorrado =this.heroes.shift() || '';
-    //shift devuelve un string o undifened por eso es recomendable mandar tambien un array vacio
-    
-    
+    //shift devuelve un string o undifened por eso es recomendable mandar tambien un array vacio        
   }
 
 }
