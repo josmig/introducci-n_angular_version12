@@ -1,2 +1,21 @@
 <h1>Dragon Ball Z</h1>
 <hr>
+<div class="row">
+    <div class="col">
+        <h2>Personajes</h2>
+        <hr>
+        <ul>
+            <li>Krillin - 700</li>
+            <li>Krillin - 700</li>
+        </ul>
+    </div>
+    <div class="col">        
+        <h2>Agregar</h2>
+        <hr>
+        <form (ngSubmit)="agregar()"> <!--FormsModule para evitar el refresh en formularios-->
+            <input type="text" placeholder="Nombre">
+            <input type="number" placeholder="Poder">
+            <button type="submit">Agregar</button>
+        </form>
+    </div>
+</div>
