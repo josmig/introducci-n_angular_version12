@@ -1,20 +1,40 @@
+        <!--FormsModule nos sirve para evitar el refresh en formularios-->
+        <!-- Ojo -> [] Sirve para establecer una propiedad / conecta con el archivo TS 
+                    () Sirve para emitir o escuchar eventos 
+            
+            ESTO PODEMOS CAMBIAR POR EL NgModel
+            [value]="nuevo.nombre"
+            (input)="cambiarNombre( $event)
+            [(ngModel)]
+                
+        -->
+
+
 <h1>Dragon Ball Z</h1>
 <hr>
 <div class="row">
     <div class="col">
         <h2>Personajes</h2>
         <hr>
-        <ul>
-            <li>Krillin - 700</li>
-            <li>Krillin - 700</li>
+        <ul>            
+            <li *ngFor="let p of personajes">{{p.nombre}} - {{p.poder | number}}</li>
         </ul>
     </div>
     <div class="col">        
-        <h2>Agregar</h2>
+        <h2>Agregar <small>{{nuevo.nombre}}</small></h2>
         <hr>
-        <form (ngSubmit)="agregar()"> <!--FormsModule para evitar el refresh en formularios-->
-            <input type="text" placeholder="Nombre">
-            <input type="number" placeholder="Poder">
+        <form (ngSubmit)="agregar()"> 
+            <input type="text" 
+                   placeholder="Nombre"
+                   name="nombre"
+                   [(ngModel)]="nuevo.nombre"> <!--Este es el conecpto de Two way data biding (emite como recibe eventos)-->
+
+
+            <input type="number"
+                   placeholder="Poder"
+                   name="poder"
+                   [(ngModel)]="nuevo.poder">
+
             <button type="submit">Agregar</button>
         </form>
     </div>
