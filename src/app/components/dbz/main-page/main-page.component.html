@@ -14,11 +14,8 @@
 <hr>
 <div class="row">
     <div class="col">
-        <h2>Personajes</h2>
-        <hr>
-        <ul>            
-            <li *ngFor="let p of personajes">{{p.nombre}} - {{p.poder | number}}</li>
-        </ul>
+        <!-- El segun "personajes" es el valor del component main , el que esta en corchete es el valor que viene del hijo -->
+        <app-personajes [personajee]="personajes"></app-personajes>        
     </div>
     <div class="col">        
         <h2>Agregar <small>{{nuevo.nombre}}</small></h2>
