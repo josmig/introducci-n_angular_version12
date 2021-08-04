@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { DBZService } from './../services/dbz.service';
+import { Component,Input} from '@angular/core';
 import { Personaje } from './../interfaces/dbz.interface';
 
 @Component({
@@ -14,15 +15,17 @@ export class AgregarComponent{
     poder:0
   }  
   //EventEmitter emite valores tipo any pero nosotros queremos recibir de tipo Personaje
-  @Output() nuevoPersonaje: EventEmitter<Personaje> = new EventEmitter();
+  /* @Output() nuevoPersonaje: EventEmitter<Personaje> = new EventEmitter(); */
   
+  constructor(private _dbzService: DBZService){}
+
   agregar(){
     if(this.nuevo.nombre.trim().length === 0 ){return;}    
 
     //agregando al array
     /* this.personajes.push(this.nuevo); */
     console.log(this.nuevo);
-    this.nuevoPersonaje.emit(this.nuevo);
+    this._dbzService.agregarPersona(this.nuevo);
     //borando el form para agregar otro
     this.nuevo = {
       nombre:'',
