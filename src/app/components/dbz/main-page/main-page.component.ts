@@ -19,22 +19,15 @@ export class MainPageComponent {
       poder:13000
     }
   ]
-  nuevo: Personaje={
+  nuevo:Personaje = {
     nombre:'',
     poder:0
-  }  
-
-  agregar(){
-    if(this.nuevo.nombre.trim().length === 0 ){return;}    
-
-    //agregando al array
-    this.personajes.push(this.nuevo);
-    //borando el form para agregar otro
-    this.nuevo = {
-      nombre:'',
-      poder:0
-    }
-    console.log(this.nuevo);      
   }
-  
+
+  agregarNuevoPersonaje( argumento: Personaje){
+    console.log('MAIN PAGE COMPONENT');
+    this.personajes.push(argumento);
+    
+  }
+ 
 }

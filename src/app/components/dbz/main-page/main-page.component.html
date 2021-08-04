@@ -18,21 +18,9 @@
         <app-personajes [personajee]="personajes"></app-personajes>        
     </div>
     <div class="col">        
-        <h2>Agregar <small>{{nuevo.nombre}}</small></h2>
-        <hr>
-        <form (ngSubmit)="agregar()"> 
-            <input type="text" 
-                   placeholder="Nombre"
-                   name="nombre"
-                   [(ngModel)]="nuevo.nombre"> <!--Este es el conecpto de Two way data biding (emite como recibe eventos)-->
-
-
-            <input type="number"
-                   placeholder="Poder"
-                   name="poder"
-                   [(ngModel)]="nuevo.poder">
-
-            <button type="submit">Agregar</button>
-        </form>
+        <app-agregar          
+            (nuevoPersonaje) = "agregarNuevoPersonaje($event)"   
+            [nuevo]= "nuevo"
+        ></app-agregar>
     </div>
 </div>
